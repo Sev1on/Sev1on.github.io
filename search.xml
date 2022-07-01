@@ -2,7 +2,7 @@
 <search>
   <entry>
     <title>Stapler</title>
-    <url>/2022/07/01/Assertion101/</url>
+    <url>/2020/07/01/Assertion101/</url>
     <content><![CDATA[<h1 id="Exploitation-Guide-for-Stapler"><a href="#Exploitation-Guide-for-Stapler" class="headerlink" title="Exploitation Guide for Stapler"></a><strong>Exploitation Guide for Stapler</strong></h1><h2 id="Summary"><a href="#Summary" class="headerlink" title="Summary"></a><strong>Summary</strong></h2><p>This target contains several vulnerabilities, misconfigurations, and oversights, which allow for multiple exploit chains to gain root privileges on the system. In this walkthrough, however, we will only consider one such chain for the sake of brevity.</p>
 <p>We will exploit the target via a local file inclusion vulnerability in the WordPress plugin <em>Advanced Video v1.0</em>. Using this vulnerability, we’ll be able to leak the WordPress configuration file that contains MySQL database credentials for the application, which will allow us to log in to MySQL. The application was misconfigured to use the MySQL root user, allowing us to write a web shell to the web root of the application.</p>
 <p>We’ll be able to escalate our privileges on the target by recovering a user’s plaintext password from a bash history file that was not cleared. The user has unrestricted <code>sudo</code> permissions, granting us easy access to a root shell.</p>
@@ -119,23 +119,11 @@
 
 <p>It looks like Peter has unrestricted <code>sudo</code> access, allowing us to easily spawn a root shell.</p>
 ]]></content>
-  </entry>
-  <entry>
-    <title>Hello World</title>
-    <url>/2022/07/01/hello-world/</url>
-    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
-]]></content>
+      <categories>
+        <category>Linux Walkthrough</category>
+      </categories>
+      <tags>
+        <tag>nmap</tag>
+      </tags>
   </entry>
 </search>
